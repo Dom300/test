@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora TVM Avançada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Calculadora TVM Avançada</h1>
+
+        <form id="tvm-form">
+            <div class="input-group">
+                <label for="present-value">Valor Presente (PV)</label>
+                <input type="number" id="present-value" placeholder="Valor presente" required>
+                <span class="error-message" id="pv-error">Insira um valor válido</span>
+            </div>
+
+            <div class="input-group">
+                <label for="payment">Pagamento</label>
+                <input type="number" id="payment" placeholder="Pagamento periódico" required>
+                <span class="error-message" id="payment-error">Insira um valor válido</span>
+            </div>
+
+            <div class="input-group">
+                <label for="future-value">Valor Futuro (FV)</label>
+                <input type="number" id="future-value" placeholder="Valor futuro" required>
+                <span class="error-message" id="fv-error">Insira um valor válido</span>
+            </div>
+
+            <div class="input-group">
+                <label for="annual-rate">Taxa Anual (%)</label>
+                <input type="number" id="annual-rate" placeholder="Taxa anual" required>
+                <span class="error-message" id="rate-error">Insira uma taxa válida</span>
+            </div>
+
+            <div class="input-group">
+                <label for="periods">Períodos</label>
+                <input type="number" id="periods" placeholder="Número de períodos" required>
+                <span class="error-message" id="periods-error">Insira um valor válido</span>
+            </div>
+
+            <div class="input-group">
+                <label>Composição</label>
+                <div class="compounding-options">
+                    <label>
+                        <input type="radio" name="compounding" value="daily" checked> Diária
+                    </label>
+                    <label>
+                        <input type="radio" name="compounding" value="weekly"> Semanal
+                    </label>
+                    <label>
+                        <input type="radio" name="compounding" value="monthly"> Mensal
+                    </label>
+                    <label>
+                        <input type="radio" name="compounding" value="quarterly"> Trimestral
+                    </label>
+                    <label>
+                        <input type="radio" name="compounding" value="semiannual"> Semestral
+                    </label>
+                    <label>
+                        <input type="radio" name="compounding" value="annual"> Anual
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" id="calculate-btn">Calcular</button>
+        </form>
+
+        <div class="result-container">
+            <h2>Resultado</h2>
+            <div id="result">
+                <p><strong>Valor Futuro:</strong> <span id="future-result">-</span></p>
+                <p><strong>Valor Presente:</strong> <span id="present-result">-</span></p>
+            </div>
+        </div>
+
+        <div id="copy-container">
+            <button id="copy-btn">Copiar Código Embed</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
